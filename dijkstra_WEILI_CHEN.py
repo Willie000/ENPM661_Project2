@@ -9,7 +9,7 @@ clearance = 5
 map_width = 1200
 map_height = 500
 
-# map
+# map with obstacles
 obstacles = [
     [(100, 100), (100, 500), (175, 500), (175, 100)],
 
