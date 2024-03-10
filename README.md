@@ -1,11 +1,11 @@
 # ENPM661_Project2
- Implementation of the Dijkstra Algorithm for a Point Robot
-README file (.md or .txt)
-○ Must describe how to run the code and give inputs (start and goal coordinates)
-
+Implementation of the Dijkstra Algorithm for a Point Robot
 
 Description:
 Implementing Dijkstra's algorithm to navigate a point robot from a specified starting position to an ending position in an environment containing obstacles. The goal is to ensure that the robot avoids contact with obstacles while achieving successful navigation using Dijkstra's algorithm.
+
+GitHub Repository Link:
+https://github.com/Willie000/ENPM661_Project2.git
 
 Prerequisites:
 Python 3.8+

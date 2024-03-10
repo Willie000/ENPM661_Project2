@@ -1,3 +1,6 @@
+# GitHub Repository Link:
+# https://github.com/Willie000/ENPM661_Project2.git
+
 import numpy as np
 import heapq
 import matplotlib.pyplot as plt
@@ -25,6 +28,21 @@ obstacles = [
 
     [(900, 450), (1100, 450), (1100, 50), (900, 50), (900, 125), (1020, 125), (1020, 375), (900, 375)]
 ]
+
+#Get vaild start and goal point
+def get_input():
+    while True:
+        print("Please enter vaild Start and Goal point")
+        start_x = int(input("start x "))
+        start_y = int(input("start y "))
+        goal_x = int(input("goal x "))
+        goal_y = int(input("goal y "))
+
+        if is_in_obstacle_space(start_x, start_y) or is_in_obstacle_space(goal_x, goal_y):
+            print("srat or goal point is within obstacle or within clearance or outside the map")
+        else:
+            return (start_x, start_y), (goal_x, goal_y)
+
 
 #check whether within clearance distance
 def within_clearance(x, y, polygon, clearance):
@@ -150,14 +168,7 @@ def animate_path(path):
     ani = FuncAnimation(fig, update, frames=len(path), init_func=init, blit=True, interval=50)
     plt.show()
 
-#start = (6, 6) #start point 
-#goal = (1194, 162) # Goal point
-start_x = int(input("start x "))
-start_y = int(input("start y "))
-goal_x = int(input("goal x "))
-goal_y = int(input("goal y "))
-start = (start_x, start_y) #start point 
-goal = (goal_x, goal_y) # Goal point
+start ,goal = get_input() # Get Start and Goal point
 start_time = time.time()
 path, visited = dijkstra(start, goal) #Use dijkstra to find solution
 time_finish = time.time() - start_time
